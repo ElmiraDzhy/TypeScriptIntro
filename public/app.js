@@ -1,7 +1,17 @@
-// modules
-// even when we work in typescript 
-// we use js, because we compiling this script into javascript
-// and browser is gonna import js file:
+// Interfaces
+const user = {
+    name: 'Kate',
+    age: 12,
+    speak: (text) => {
+        console.log(text);
+    },
+    spend: (sum) => sum,
+};
+const greetPerson = (person) => {
+    console.log(`Hello, ${person.name}`);
+};
+console.log(user);
+greetPerson(user);
 import Invoice from "./classes/Invoice.js";
 const inv = new Invoice('mario', 'work', 200);
 const inv2 = new Invoice('tom', 'work', 150);
