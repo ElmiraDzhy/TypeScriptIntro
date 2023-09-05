@@ -1,14 +1,8 @@
 "use strict";
-let greet;
-greet = () => console.log('hello');
-// default value :
-const add = (a, b, c = 10) => {
-    console.log(a + b);
-    console.log(c);
+// type aliases
+const logDetails = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
-add(2, 3);
-const minus = (a, b) => {
-    return a - b;
+const greet = (user) => {
+    console.log(`${user.name} says hello`);
 };
-let result = minus(10, 7);
-// result = 'string' ->> error

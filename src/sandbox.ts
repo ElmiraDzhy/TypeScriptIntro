@@ -1,20 +1,14 @@
-let greet: Function;
+// type aliases
 
-greet = () => console.log('hello');
+type StrOrNum = string|number;
 
-// default value :
-const add = (a: number, b: number, c: number|string = 10): void => {
-  console.log(a + b);
-  console.log(c);
+type objWithName = { name: string, uid: StrOrNum }
+
+const logDetails = (uid: StrOrNum, item: string) => {
+  console.log(`${item} has a uid of ${uid}`);
 }
 
-add(2, 3);
-
-const minus = (a: number, b: number): number => {
-  return a - b;
+const greet = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
 }
-
-let result = minus(10, 7);
-
-// result = 'string' ->> error
 
