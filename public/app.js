@@ -1,18 +1,14 @@
-// Interfaces
-const user = {
-    name: 'Kate',
-    age: 12,
-    speak: (text) => {
-        console.log(text);
-    },
-    spend: (sum) => sum,
-};
-const greetPerson = (person) => {
-    console.log(`Hello, ${person.name}`);
-};
-console.log(user);
-greetPerson(user);
+// Interfaces with Classes
 import Invoice from "./classes/Invoice.js";
+import Payment from "./classes/Payment.js";
+let docOne;
+let docTwo;
+docOne = new Invoice('yoshi', 'web work', 250);
+docTwo = new Payment('mario', 'plumbing work', 170);
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log(docs);
 const inv = new Invoice('mario', 'work', 200);
 const inv2 = new Invoice('tom', 'work', 150);
 let invoices = [];
