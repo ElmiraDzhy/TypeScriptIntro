@@ -1,23 +1,24 @@
-// DOM Interaction & Typecasting
+// classes
 
-// we add '!' for show typescript that we know exactly this element exist
-const anchor = document.querySelector('a')!;
+class Invoice {
+  client: string;
+  details: string;
+  amount: number;
 
-console.log(anchor.href);
+  constructor(c: string, d: string, a: number){
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
 
-// const form = document.querySelector('form')!; // typescript says it's a HTMLFormElement
-// const form = document.querySelector('.new-item-form')!; // typescript says it's an Element
-/**
- * when we use 'a' or 'form' tag, typescript knows what tag we grabbing
- * 
- * in another case we use class and class could be apply to any element in the page
- * 
- * we need to use typecasting:
- */
+  format(){
+    return `${this.client} owes $${this.amount} for ${this.details}`;
+  }
+
+}
+
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
-
-// console.log(form.children);
 
 //inputs
 

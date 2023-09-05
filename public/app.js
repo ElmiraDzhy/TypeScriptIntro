@@ -1,19 +1,16 @@
 "use strict";
-// DOM Interaction & Typecasting
-// we add '!' for show typescript that we know exactly this element exist
-const anchor = document.querySelector('a');
-console.log(anchor.href);
-// const form = document.querySelector('form')!; // typescript says it's a HTMLFormElement
-// const form = document.querySelector('.new-item-form')!; // typescript says it's an Element
-/**
- * when we use 'a' or 'form' tag, typescript knows what tag we grabbing
- *
- * in another case we use class and class could be apply to any element in the page
- *
- * we need to use typecasting:
- */
+// classes
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`;
+    }
+}
 const form = document.querySelector('.new-item-form');
-// console.log(form.children);
 //inputs
 const type = document.querySelector('#type');
 const toFrom = document.querySelector('#tofrom');
