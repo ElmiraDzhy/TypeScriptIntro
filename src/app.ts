@@ -1,22 +1,11 @@
-// access modifiers
+// modules
 
-class Invoice {
-  constructor(
-    // in constructor modifiers are required
-    readonly client: string,
-    private details: string,
-    public amount: number
-  ){
-    this.client = client;
-    this.details = details;
-    this.amount = amount;
-  }
+// even when we work in typescript 
+// we use js, because we compiling this script into javascript
+// and browser is gonna import js file:
 
-  format(){
-    return `${this.client} owes $${this.amount} for ${this.details}`;
-  }
+import Invoice from "./classes/Invoice.js"; 
 
-}
 
 const inv = new Invoice('mario', 'work', 200);
 const inv2 = new Invoice('tom', 'work', 150);

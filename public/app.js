@@ -1,20 +1,8 @@
-"use strict";
-// access modifiers
-class Invoice {
-    constructor(
-    // in constructor modifiers are required
-    client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    format() {
-        return `${this.client} owes $${this.amount} for ${this.details}`;
-    }
-}
+// modules
+// even when we work in typescript 
+// we use js, because we compiling this script into javascript
+// and browser is gonna import js file:
+import Invoice from "./classes/Invoice.js";
 const inv = new Invoice('mario', 'work', 200);
 const inv2 = new Invoice('tom', 'work', 150);
 let invoices = [];
