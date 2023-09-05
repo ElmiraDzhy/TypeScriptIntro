@@ -1,9 +1,11 @@
-// classes
+// access modifiers
 
 class Invoice {
-  client: string;
-  details: string;
-  amount: number;
+  // default behavior - all properties are public
+
+  readonly client: string; // can read outside of the class, but can't change
+  private details: string; // can't access outside of the class event for reading
+  public amount: number; // default, access for reading and updating
 
   constructor(c: string, d: string, a: number){
     this.client = c;
@@ -24,9 +26,12 @@ let invoices: Invoice[] = [];
 invoices.push(inv);
 invoices.push(inv2);
 
-console.log(invoices);
+invoices.forEach(inv => {
+  console.log(inv.format());
+})
 
 
+//
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 

@@ -1,5 +1,5 @@
 "use strict";
-// classes
+// access modifiers
 class Invoice {
     constructor(c, d, a) {
         this.client = c;
@@ -10,6 +10,15 @@ class Invoice {
         return `${this.client} owes $${this.amount} for ${this.details}`;
     }
 }
+const inv = new Invoice('mario', 'work', 200);
+const inv2 = new Invoice('tom', 'work', 150);
+let invoices = [];
+invoices.push(inv);
+invoices.push(inv2);
+invoices.forEach(inv => {
+    console.log(inv.format());
+});
+//
 const form = document.querySelector('.new-item-form');
 //inputs
 const type = document.querySelector('#type');
