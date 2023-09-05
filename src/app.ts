@@ -1,16 +1,15 @@
 // access modifiers
 
 class Invoice {
-  // default behavior - all properties are public
-
-  readonly client: string; // can read outside of the class, but can't change
-  private details: string; // can't access outside of the class event for reading
-  public amount: number; // default, access for reading and updating
-
-  constructor(c: string, d: string, a: number){
-    this.client = c;
-    this.details = d;
-    this.amount = a;
+  constructor(
+    // in constructor modifiers are required
+    readonly client: string,
+    private details: string,
+    public amount: number
+  ){
+    this.client = client;
+    this.details = details;
+    this.amount = amount;
   }
 
   format(){
