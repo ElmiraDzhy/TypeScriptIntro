@@ -1,4 +1,4 @@
-// Interfaces with Classes
+// Rendering an HTML Template
 import Invoice from "./classes/Invoice.js";
 import Payment from "./classes/Payment.js";
 const form = document.querySelector('.new-item-form');
