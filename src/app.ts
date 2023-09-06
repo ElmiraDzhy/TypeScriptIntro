@@ -60,3 +60,21 @@ let docTwo = addUID_2({name: 'lola', age: 30});
 
 console.log(docTwo.name); // no error
 
+//with interface
+interface Resource <T> {
+  uid: number;
+  resourceName: string;
+  data: T; // we want to make it flexible
+}
+
+const docThree: Resource<string> = {
+  uid: 1,
+  resourceName: 'person',
+  data: 'str',
+}
+
+const docFour: Resource<object[]> = {
+  uid: 1,
+  resourceName: 'person',
+  data:[{name: 'shaun'}],
+}

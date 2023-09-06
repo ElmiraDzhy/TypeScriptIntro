@@ -40,3 +40,13 @@ const addUID_2 = (obj) => {
 };
 let docTwo = addUID_2({ name: 'lola', age: 30 });
 console.log(docTwo.name); // no error
+const docThree = {
+    uid: 1,
+    resourceName: 'person',
+    data: 'str',
+};
+const docFour = {
+    uid: 1,
+    resourceName: 'person',
+    data: [{ name: 'shaun' }],
+};
