@@ -21,26 +21,16 @@ form.addEventListener('submit', (e) => {
     }
     list.render(doc, type.value, 'end');
 });
-//ENUMS
-var ResourceType;
-(function (ResourceType) {
-    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
-    ResourceType[ResourceType["FILM"] = 1] = "FILM";
-    ResourceType[ResourceType["PERSON"] = 2] = "PERSON";
-})(ResourceType || (ResourceType = {})); //0, 1, 2
-const docOne = {
-    uid: 1,
-    resourceType: ResourceType.BOOK,
-    data: 'name of the wind',
-};
-const docTwo = {
-    uid: 7,
-    resourceType: ResourceType.PERSON,
-    data: { name: 'michael' },
-};
-console.log(docOne, docTwo);
-/**
- * data: "name of the wind"
- * resourceType: 0
- * uid: 1
- */
+// tuples
+let arr = ['ryu', 25, true];
+//no errors:
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi'];
+// the difference with the tuples is the once we define position type - we can't change it
+let tup = ['ryu', 23, false];
+tup = ['str', 33, true]; // allow
+// tup[0] = false ->> error
+let student;
+student = ['chun-li', 153612584];
+// student = [123123, 'name'] ->> error

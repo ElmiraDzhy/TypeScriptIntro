@@ -32,32 +32,23 @@ form.addEventListener('submit', (e: Event) => {
   
 });
 
-//ENUMS
+// tuples
 
-enum ResourceType { BOOK, FILM, PERSON} //0, 1, 2
+let arr = ['ryu', 25, true];
 
-interface Resource <T> {
-  uid: number;
-  resourceType: ResourceType;
-  data: T; 
-}
+//no errors:
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi'];
 
-const docOne: Resource<string> = {
-  uid: 1,
-  resourceType: ResourceType.BOOK,
-  data: 'name of the wind',
-}
+// the difference with the tuples is the once we define position type - we can't change it
 
-const docTwo: Resource<object> = {
-  uid: 7,
-  resourceType: ResourceType.PERSON,
-  data: {name: 'michael'},
-}
+let tup: [string, number, boolean] = ['ryu', 23, false];
 
-console.log(docOne, docTwo);
+tup = ['str', 33, true]; // allow
+// tup[0] = false ->> error
 
-/**
- * data: "name of the wind"
- * resourceType: 0
- * uid: 1
- */
+let student: [string, number];
+
+student = ['chun-li', 153612584];
+// student = [123123, 'name'] ->> error
