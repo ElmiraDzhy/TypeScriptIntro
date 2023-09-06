@@ -32,49 +32,32 @@ form.addEventListener('submit', (e: Event) => {
   
 });
 
-// Generics
+//ENUMS
 
-// generics allows to create reusable blocks of code
-// which could be use with different types
+enum ResourceType { BOOK, FILM, PERSON} //0, 1, 2
 
-const addUID = (obj: object) => {
-  let uid = Math.floor(Math.random() * 1000);
-  return {...obj, uid};
-}
-
-let docOne = addUID({name: 'Lola', age: 25});
-
-// console.log(docOne.name); if i try to access a property - we get an error
-// this property 'name' does not exist on type {uid: number}
-// why ? - when we passing the object into function 'addUID'
-// we not spesify exactly what this obj should be
-
-//we can combat this by using a generic:
-
-const addUID_2 = <T extends object>(obj: T) => {
-  let uid = Math.floor(Math.random() * 1000);
-  return {...obj, uid};
-}
-
-let docTwo = addUID_2({name: 'lola', age: 30});
-
-console.log(docTwo.name); // no error
-
-//with interface
 interface Resource <T> {
   uid: number;
-  resourceName: string;
-  data: T; // we want to make it flexible
+  resourceType: ResourceType;
+  data: T; 
 }
 
-const docThree: Resource<string> = {
+const docOne: Resource<string> = {
   uid: 1,
-  resourceName: 'person',
-  data: 'str',
+  resourceType: ResourceType.BOOK,
+  data: 'name of the wind',
 }
 
-const docFour: Resource<object[]> = {
-  uid: 1,
-  resourceName: 'person',
-  data:[{name: 'shaun'}],
+const docTwo: Resource<object> = {
+  uid: 7,
+  resourceType: ResourceType.PERSON,
+  data: {name: 'michael'},
 }
+
+console.log(docOne, docTwo);
+
+/**
+ * data: "name of the wind"
+ * resourceType: 0
+ * uid: 1
+ */
