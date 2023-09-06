@@ -20,6 +20,6 @@ class ListTemplate {
         this.container.append(li);
       }
   }
-
-
 }
+
+export default ListTemplate;

@@ -18,4 +18,4 @@ class ListTemplate {
         }
     }
 }
-export {};
+export default ListTemplate;
